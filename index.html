@@ -3,21 +3,202 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#b6bfdf">
   <meta name="referrer" content="no-referrer">
   <meta name="description" content="KiteMosaic — independent games, privacy information and support.">
   <title>KiteMosaic</title>
   <link rel="canonical" href="https://kitemosaic.github.io/">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="redbluetap/theme.css">
+  <style>
+    body.studio-home {
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      min-height: 100svh;
+    }
+    .studio-home .sky {
+      background: radial-gradient(ellipse at 78% 68%, #95c8d5 0, #95c8d500 53%),
+        radial-gradient(ellipse at 30% 30%, #c8b9e7 0, #c8b9e700 66%),
+        linear-gradient(160deg, #a8b5dc, #b8c1e3 55%, #afcddd);
+    }
+    .studio-home .sky::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, #f6f6ff1a, #f6f6ff08 65%, #f4f7ff30);
+    }
+    .studio-home .site-header, .studio-home .site-footer, .studio-main {
+      width: min(100% - 4rem, 64rem);
+      margin-inline: auto;
+    }
+    .studio-home .brand {
+      font-family: Fredoka, ui-rounded, sans-serif;
+      font-size: 1.6rem; font-weight: 600; letter-spacing: -.025em;
+    }
+    .studio-main { flex: 1; padding: clamp(1.5rem, 5vh, 4.5rem) 0 2rem; }
+    .studio-intro {
+      display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      align-items: center; gap: 2rem;
+      padding: 1rem 0 clamp(2.5rem, 5vw, 4.5rem);
+    }
+    .studio-intro .eyebrow { margin: 0 0 .75rem; }
+    .studio-intro h1 {
+      font-size: clamp(2.6rem, 5.5vw, 4.65rem);
+      letter-spacing: -.04em; margin: 0; max-width: 11ch;
+      text-wrap: balance;
+    }
+    .kite-art { display: block; width: 100%; max-width: 22rem; margin-inline: auto; overflow: visible; }
+    .games-label {
+      font-family: Fredoka, ui-rounded, sans-serif; font-size: 1.35rem;
+      font-weight: 500; margin: 0 0 .85rem; color: var(--ink);
+    }
+    .game-feature {
+      display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr);
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: center;
+      padding: clamp(1.3rem, 3.8vw, 2.5rem);
+      border: 1px solid #f4f5ffb8; border-radius: 1.6rem;
+      background: #f1f3fc82;
+      box-shadow: 0 12px 35px #354c8120, inset 0 1px 0 #ffffff70;
+    }
+    .game-preview {
+      position: relative; aspect-ratio: 1.28 / 1; overflow: hidden;
+      border-radius: 1.1rem;
+      background: radial-gradient(ellipse at 78% 90%, #94c4d4, transparent 60%),
+        radial-gradient(ellipse at 42% 40%, #cfbce8, transparent 75%), #aebbe0;
+      border: 1px solid #e9edfb;
+    }
+    .game-preview svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .game-preview .preview-question {
+      position: absolute; left: 50%; top: 48%; transform: translate(-50%, -50%);
+      font-size: clamp(3.8rem, 8vw, 5.8rem); line-height: 1; color: var(--ink);
+    }
+    .game-preview .preview-glow {
+      position: absolute; inset: 8% 14%;
+      background: radial-gradient(ellipse, #dce6ffb0, #c9d7f200 66%);
+    }
+    .feature-copy { min-width: 0; }
+    .feature-copy h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+      letter-spacing: -.04em; margin: 0 0 .55rem;
+    }
+    .feature-copy .intro { font-family: Fredoka, ui-rounded, sans-serif; font-weight: 500; font-size: 1.2rem; color: var(--ink); line-height: 1.45; }
+    .feature-copy p { margin: .65rem 0; }
+    .feature-links {
+      display: flex; flex-wrap: wrap; align-items: center;
+      gap: .7rem 1.3rem; margin-top: 1.35rem;
+      font-size: .9375rem;
+    }
+    .feature-links .pill-link { white-space: normal; text-align: center; }
+    .studio-home .site-footer {
+      border-top: 1px solid var(--line);
+      margin-top: 1rem;
+      padding-top: 1.35rem;
+    }
+    @media (max-width: 40rem) {
+      .studio-home .site-header, .studio-home .site-footer, .studio-main {
+        width: calc(100% - 2.5rem);
+      }
+      .studio-intro { grid-template-columns: 1fr; text-align: center; gap: .8rem; padding: 0 0 2rem; }
+      .studio-intro h1 { max-width: 16ch; margin-inline: auto; font-size: clamp(2.4rem, 9vw, 3.5rem); }
+      .kite-art { max-width: 11rem; }
+      .games-label { text-align: center; }
+      .game-feature { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.1rem; border-radius: 1.25rem; }
+      .game-preview { width: 100%; max-width: 23rem; aspect-ratio: 1.8 / 1; margin-inline: auto; }
+      .feature-copy { text-align: center; }
+      .feature-links { justify-content: center; }
+      .studio-home .site-footer { margin-top: .5rem; }
+    }
+    @media (forced-colors: active) {
+      .kite-art, .game-preview { display: none; }
+      .studio-intro, .game-feature { grid-template-columns: 1fr; }
+      .game-feature { border: 1px solid CanvasText; }
+    }
+    @media print {
+      .kite-art, .game-preview { display: none; }
+      .studio-intro, .game-feature { display: block; }
+      .game-feature { border: 1px solid #aaa; background: white; box-shadow: none; }
+    }
+  </style>
 </head>
-<body>
+<body class="studio-home">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><a class="brand" href="./">KiteMosaic</a><nav aria-label="Main navigation"><a href="mailto:kitemosaic@gmail.com">Contact</a></nav></header>
-  <main class="landing" id="main">
-    <p class="eyebrow">Independent games</p>
-    <h1>A little room to play.</h1>
-    <section aria-labelledby="game-title"><h2 id="game-title"><span class="red">Red</span> <span class="blue">Blue</span> Tap</h2><p class="intro">Tap blue. Leave red. Reveal the picture.</p><p>A gentle picture-reveal game with a sketchbook of discoveries.</p><p class="links"><a href="redbluetap/">About Red Blue Tap</a><a href="redbluetap/privacy.html">Privacy Policy</a></p></section>
+  <div class="sky" aria-hidden="true"><img class="sky-art" src="redbluetap/assets/sky.svg" alt="" width="1600" height="1100"></div>
+  <header class="site-header">
+    <a class="brand" href="./">KiteMosaic</a>
+    <nav aria-label="Main navigation"><a href="mailto:kitemosaic@gmail.com">Contact</a></nav>
+  </header>
+  <main class="studio-main" id="main">
+    <section class="studio-intro" aria-labelledby="studio-title">
+      <div>
+        <p class="eyebrow">Independent games</p>
+        <h1 class="display" id="studio-title">A little room to play.</h1>
+      </div>
+      <svg class="kite-art" viewBox="0 0 320 215" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="kite-a" x1="165" y1="21" x2="220" y2="113" gradientUnits="userSpaceOnUse"><stop stop-color="#ebd7ef"/><stop offset="1" stop-color="#c5acd9"/></linearGradient>
+          <linearGradient id="kite-b" x1="80" y1="72" x2="165" y2="135" gradientUnits="userSpaceOnUse"><stop stop-color="#a4c8e4"/><stop offset="1" stop-color="#728fca"/></linearGradient>
+          <linearGradient id="kite-c" x1="169" y1="88" x2="192" y2="150" gradientUnits="userSpaceOnUse"><stop stop-color="#b8dce0"/><stop offset="1" stop-color="#83b8c6"/></linearGradient>
+          <radialGradient id="kite-halo"><stop stop-color="#f3efff" stop-opacity=".7"/><stop offset="1" stop-color="#f3efff" stop-opacity="0"/></radialGradient>
+        </defs>
+        <ellipse cx="169" cy="83" rx="128" ry="92" fill="url(#kite-halo)"/>
+        <path d="M165 145C146 163 110 157 105 177S145 199 117 211" stroke="#687cac" stroke-opacity=".68" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M169 18L245 79 165 145 90 74Z" fill="#f3f1fc" stroke="#f4f0fc" stroke-width="4.5" stroke-linejoin="round"/>
+        <path d="M169 18 167 83 90 74Z" fill="url(#kite-b)"/>
+        <path d="M169 18 245 79 167 83Z" fill="url(#kite-a)"/>
+        <path d="M90 74 167 83 165 145Z" fill="#b4b9e4"/>
+        <path d="M167 83 245 79 165 145Z" fill="url(#kite-c)"/>
+        <path d="M169 18 165 145M90 74 245 79" stroke="#f6f4ff" stroke-opacity=".86" stroke-width="2"/>
+        <path d="m108 179-14-7 2 14 11-3 13 9-1-15Z" fill="#b797c7"/>
+        <path d="m129 201-10-8-2 11 10 1 9 9 2-13Z" fill="#80a6c6"/>
+        <g fill="#f9f8ff">
+          <circle cx="51" cy="64" r="2"/><circle cx="271" cy="39" r="2.4"/><circle cx="259" cy="153" r="1.8"/>
+          <path d="M62 123v10m-5-5h10M285 98v8m-4-4h8" stroke="#f9f8ff" stroke-width="1.8" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </section>
+    <section aria-labelledby="games-heading">
+      <h2 class="games-label" id="games-heading">Our games</h2>
+      <article class="game-feature" aria-labelledby="game-title">
+        <div class="game-preview" aria-hidden="true">
+          <div class="preview-glow"></div>
+          <svg viewBox="0 0 320 240" preserveAspectRatio="none">
+            <defs>
+              <radialGradient id="preview-blue" cx=".32" cy=".26" r=".8"><stop stop-color="#a0dbf4"/><stop offset=".45" stop-color="#56a5dd"/><stop offset="1" stop-color="#3674b9"/></radialGradient>
+              <radialGradient id="preview-red" cx=".32" cy=".26" r=".8"><stop stop-color="#f6b2c7"/><stop offset=".45" stop-color="#dc7098"/><stop offset="1" stop-color="#b44e77"/></radialGradient>
+            </defs>
+            <g fill="none" stroke="#7184af" stroke-opacity=".36" stroke-width="1.25">
+              <path d="M45 160 85 45 260 62M85 45 115 200 277 182"/>
+            </g>
+            <g fill="#f1f2ff" opacity=".48">
+              <path d="M0 215C12 195 31 190 44 203C63 191 87 205 92 222C111 216 131 225 137 240H0Z"/>
+              <path d="M186 240C201 217 219 218 234 222C240 201 260 191 277 201C290 180 308 178 320 190V240Z"/>
+            </g>
+            <circle cx="85" cy="45" r="12" fill="url(#preview-blue)"/>
+            <circle cx="260" cy="62" r="10" fill="url(#preview-red)"/>
+            <circle cx="45" cy="160" r="10" fill="url(#preview-red)"/>
+            <circle cx="277" cy="182" r="12" fill="url(#preview-blue)"/>
+            <circle cx="115" cy="200" r="9" fill="url(#preview-blue)"/>
+            <circle cx="202" cy="27" r="7" fill="url(#preview-blue)"/>
+            <g fill="#8b8ab6" opacity=".5"><circle cx="30" cy="81" r="3"/><circle cx="224" cy="112" r="2.5"/><circle cx="185" cy="217" r="3"/></g>
+          </svg>
+          <span class="preview-question display">?</span>
+        </div>
+        <div class="feature-copy">
+          <h2 class="display" id="game-title">Red Blue Tap</h2>
+          <p class="intro">Tap <span class="blue">blue.</span> Leave <span class="red">red.</span> Reveal the picture.</p>
+          <p>A gentle picture-reveal game with a sketchbook of discoveries.</p>
+          <div class="feature-links">
+            <a class="pill-link" href="redbluetap/">About Red Blue Tap</a>
+            <a href="redbluetap/privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </article>
+    </section>
   </main>
-  <footer class="site-footer"><p>© 2026 KiteMosaic. All rights reserved.</p><p>This website is hosted by GitHub Pages. <a href="redbluetap/privacy.html#website">Website privacy information</a></p></footer>
+  <footer class="site-footer">
+    <div class="footer-top"><p>© 2026 KiteMosaic. All rights reserved.</p><p>This website is hosted by GitHub Pages. <a href="redbluetap/privacy.html#website">Website privacy information</a></p></div>
+    <p class="font-credit">Typefaces: <a href="redbluetap/assets/fonts/dynapuff-OFL.txt">DynaPuff</a> and <a href="redbluetap/assets/fonts/fredoka-OFL.txt">Fredoka</a>, SIL Open Font License.</p>
+  </footer>
 </body>
 </html>
