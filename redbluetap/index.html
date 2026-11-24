@@ -3,23 +3,57 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#aab8de">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Red Blue Tap by KiteMosaic. Tap blue. Leave red. Reveal the picture. Privacy information and support.">
+  <meta name="description" content="Red Blue Tap by KiteMosaic. Tap blue. Leave red. Reveal the picture. Discover 100 little mysteries with gentle music and a sky full of clouds.">
   <title>Red Blue Tap | KiteMosaic</title>
   <link rel="canonical" href="https://kitemosaic.github.io/redbluetap/">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="preload" href="assets/fonts/dynapuff.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="theme.css">
 </head>
-<body>
+<body class="game-page">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><a class="brand" href="../">KiteMosaic</a><nav aria-label="Main navigation"><a href="privacy.html">Privacy Policy</a></nav></header>
-  <main class="landing" id="main">
-    <p class="eyebrow">A picture-reveal game by KiteMosaic</p>
-    <h1><span class="red">Red</span> <span class="blue">Blue</span> Tap</h1>
-    <p class="intro">Tap blue. Leave red. Reveal the picture.</p>
-    <p>Discover hidden pictures one tap at a time, with gentle music, drifting clouds and a sketchbook of your discoveries.</p>
-    <section aria-labelledby="support-heading"><h2 id="support-heading">Privacy and support</h2><p>Learn what stays on your device, how advertising services handle information, and how to use your privacy controls.</p><p class="links"><a href="privacy.html">Read the Privacy Policy</a><a href="mailto:kitemosaic@gmail.com">Contact KiteMosaic</a></p></section>
+  <div class="sky" aria-hidden="true"><img class="sky-art" src="assets/sky.svg" alt="" width="1600" height="1100"></div>
+  <header class="site-header">
+    <a class="brand" href="../">KiteMosaic</a>
+    <nav aria-label="Main navigation"><a href="privacy.html">Privacy Policy</a><a href="#support">Support</a></nav>
+  </header>
+  <main class="game-main" id="main">
+    <section class="game-hero" aria-labelledby="game-title">
+      <p class="eyebrow">A picture-reveal game by KiteMosaic</p>
+      <h1 class="game-title display" id="game-title">Red Blue Tap</h1>
+      <p class="tagline rounded"><span>Tap <b class="blue">blue.</b></span> <span>Leave <b class="red">red.</b></span> <span>Reveal the picture.</span></p>
+      <div class="mystery-scene" aria-hidden="true">
+        <div class="question-glow"></div>
+        <svg class="mystery-threads" viewBox="0 0 600 300" preserveAspectRatio="none" fill="none">
+          <path d="M72 207 144 54 480 81" stroke="#687aaa" stroke-width="1.15" opacity=".2"/>
+          <path d="M204 276 144 54" stroke="#687aaa" stroke-width="1" opacity=".13"/>
+          <path class="signal" d="M72 207 144 54 480 81" stroke="#f4f7ff" stroke-width="2" stroke-linecap="round"/>
+          <path class="signal signal-two" d="M144 54 204 276 420 285" stroke="#f4f7ff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="orb orb-one"></span><span class="orb orb-red orb-two"></span>
+        <span class="orb orb-red orb-three"></span><span class="orb orb-four"></span>
+        <span class="orb orb-five"></span><span class="orb orb-six"></span>
+        <span class="ghost-dot ghost-one"></span><span class="ghost-dot ghost-two"></span>
+        <span class="ghost-dot ghost-three"></span><span class="ghost-dot ghost-four"></span>
+        <span class="question-mark display">?</span>
+      </div>
+      <p class="game-intro">Discover hidden pictures one tap at a time, with gentle music, drifting clouds and a sketchbook of your discoveries.</p>
+      <ul class="game-facts" aria-label="Game features">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3 14.6 9.4 21 12 14.6 14.6 12 21 9.4 14.6 3 12 9.4 9.4Z" stroke-linejoin="round"/></svg>100 mysteries</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 17V5l11-2v12M9 8l11-2" stroke-linejoin="round"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="17" cy="16" rx="3" ry="2"/></svg>Gentle music</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 5c-3-2-6-2-10-1v15c4-1 7-1 10 1 3-2 6-2 10-1V4c-4-1-7-1-10 1Zm0 0v15" stroke-linejoin="round"/></svg>Your own sketchbook</li>
+      </ul>
+    </section>
+    <section class="support-section" id="support" aria-labelledby="support-heading">
+      <div><h2 id="support-heading">Privacy and support</h2><p>Learn what stays on your device, how advertising services handle information, and how to use your privacy controls.</p></div>
+      <div class="support-actions"><a class="pill-link" href="privacy.html">Read the Privacy Policy</a><a href="mailto:kitemosaic@gmail.com">Contact KiteMosaic</a></div>
+    </section>
   </main>
-  <footer class="site-footer"><p>© 2026 KiteMosaic. All rights reserved.</p><p>This website is hosted by GitHub Pages. <a href="privacy.html#website">Website privacy information</a></p></footer>
+  <footer class="site-footer">
+    <div class="footer-top"><p>© 2026 KiteMosaic. All rights reserved.</p><p>Hosted by GitHub Pages. <a href="privacy.html#website">Website privacy</a></p></div>
+    <p class="font-credit">Typefaces: <a href="assets/fonts/dynapuff-OFL.txt">DynaPuff</a> and <a href="assets/fonts/fredoka-OFL.txt">Fredoka</a>, SIL Open Font License.</p>
+  </footer>
 </body>
 </html>

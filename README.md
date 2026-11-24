@@ -10,6 +10,14 @@ Public information for KiteMosaic games. This repository contains website conten
 
 The site uses plain HTML and CSS. There is no build step, JavaScript, analytics integration or externally loaded font. Enable GitHub Pages from `main`, `/(root)`, using **Deploy from a branch** if it is not already enabled.
 
+## Red Blue Tap theme
+
+The two Red Blue Tap pages use the approved app light palette: lavender-blue skies, an aqua glow, layered clouds, muted teal leaves and small stars. The game title and question mark use DynaPuff Semibold; the tagline uses Fredoka Semibold. Privacy text uses the system font. The shared developer home page keeps its existing styling.
+
+All decorative motion is CSS-only, ends within five seconds and respects reduced-motion preferences. The policy has desktop contents navigation, a single-column mobile layout and print styles. No build step or JavaScript is needed.
+
+The original variable font files and complete SIL Open Font License notices are bundled in `redbluetap/assets/fonts/`. Sources: [DynaPuff](https://github.com/google/fonts/tree/83c62e30d87daa70216dab6b984d00d20d96d585/ofl/dynapuff) and [Fredoka](https://github.com/google/fonts/tree/83c62e30d87daa70216dab6b984d00d20d96d585/ofl/fredoka). Fonts are served by this site, with no request to Google Fonts. The decorative sky is an original SVG adaptation of the app theme.
+
 ## Keeping the privacy policy accurate
 
 The policy dated 24 November 2026 reflects the app implementation reports supplied by the developer: local game records and reminder timing, Google AdMob Next-Gen and UMP, no game accounts or developer gameplay backend, and an intended audience of ages 13 and over. The public privacy contact is `kitemosaic@gmail.com`.

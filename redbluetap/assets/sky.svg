@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" preserveAspectRatio="xMidYMax slice" fill="none">
+  <defs>
+    <linearGradient id="cloud-back" x1="800" y1="750" x2="800" y2="1100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D6D9F5" stop-opacity=".83"/>
+      <stop offset="1" stop-color="#AFC9E4" stop-opacity=".58"/>
+    </linearGradient>
+    <linearGradient id="cloud-front" x1="800" y1="896" x2="800" y2="1100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0E8FA" stop-opacity=".81"/>
+      <stop offset="1" stop-color="#BFD8EB" stop-opacity=".69"/>
+    </linearGradient>
+    <linearGradient id="cloud-far" x1="170" y1="442" x2="170" y2="625" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D7DCF7" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#D7DCF7" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="star-tail" x1="0" y1="0" x2="28" y2="38" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9F8FF" stop-opacity="0"/>
+      <stop offset="1" stop-color="#F9F8FF" stop-opacity=".62"/>
+    </linearGradient>
+    <g id="sprig">
+      <path d="M14 1101C40 1070 71 1016 79 952M42 1061C80 1038 111 1018 143 983M30 1078C81 1061 123 1055 169 1059" stroke="#72A4B1" stroke-width="5" stroke-linecap="round" opacity=".61"/>
+      <path d="M79 968C53 948 53 906 67 879C88 902 95 942 79 968Z" fill="#6397A7" opacity=".68"/>
+      <path d="M79 968C74 940 69 908 67 879C88 902 95 942 79 968Z" fill="#8CB8BF" opacity=".68"/>
+      <path d="M91 1037C102 1004 134 976 169 969C160 1001 126 1031 91 1037Z" fill="#5F96A7" opacity=".63"/>
+      <path d="M91 1037C118 1015 143 989 169 969C134 976 102 1004 91 1037Z" fill="#8AB8BF" opacity=".51"/>
+      <path d="M70 1068C99 1046 146 1044 187 1060C151 1082 105 1088 70 1068Z" fill="#6097A5" opacity=".62"/>
+      <path d="M70 1068C110 1061 151 1058 187 1060C146 1044 99 1046 70 1068Z" fill="#92BEC5" opacity=".57"/>
+      <path d="M31 1076C5 1057-6 1019-3 986C22 1005 38 1045 31 1076Z" fill="#669BA9" opacity=".63"/>
+    </g>
+  </defs>
+  <style>
+    .cloud-side{animation:side-drift 4.6s ease-in-out 1}
+    .cloud-bank{animation:bank-drift 4.8s ease-in-out 1}
+    .star-trail{animation:star-pass 3.8s ease-out 1;opacity:0}
+    .trail-two{animation-duration:4.4s}
+    .phone-clouds{display:none}
+    @keyframes side-drift{0%,100%{transform:translateX(0)}50%{transform:translateX(15px)}}
+    @keyframes bank-drift{0%,100%{transform:translateX(0)}50%{transform:translateX(-11px)}}
+    @keyframes star-pass{0%{opacity:0;transform:translate(0,0)}20%{opacity:.75}80%{opacity:.2}100%{opacity:0;transform:translate(33px,48px)}}
+    @media(max-aspect-ratio:1/1){.leaf-left{transform:translateX(250px)}.leaf-right{transform:translateX(-250px)}}
+    @media(max-aspect-ratio:3/4){.leaf-left{transform:translateX(430px)}.leaf-right{transform:translateX(-430px)}.phone-clouds{display:inline}.wide-cloud{display:none}}
+    @media(max-aspect-ratio:9/16){.leaf-left{transform:translateX(545px)}.leaf-right{transform:translateX(-545px)}}
+    @media(prefers-reduced-motion:reduce){.cloud-side,.cloud-bank,.star-trail{animation:none}.star-trail{opacity:.15}}
+  </style>
+  <g fill="#F8F7FF" opacity=".65">
+    <circle cx="128" cy="170" r="1.5"/><circle cx="382" cy="288" r="1.8"/>
+    <circle cx="1309" cy="161" r="1.4"/><circle cx="1465" cy="405" r="1.9"/>
+    <circle cx="238" cy="670" r="1.4"/><circle cx="1169" cy="640" r="1.5"/>
+    <circle cx="475" cy="849" r="2"/><circle cx="1373" cy="828" r="1.8"/>
+    <circle cx="673" cy="962" r="1.5"/><circle cx="112" cy="905" r="2"/>
+    <circle cx="1038" cy="903" r="1.4"/><circle cx="876" cy="162" r="1.3"/>
+    <path d="M1440 563V569M1437 566H1443M553 430V435M550.5 432.5H555.5" stroke="#F8F7FF" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(1236 297)"><g class="star-trail"><path d="M0 0L28 38" stroke="url(#star-tail)" stroke-width="1.7" stroke-linecap="round"/><circle cx="28" cy="38" r="1.6" fill="#F8F7FF"/></g></g>
+  <g transform="translate(306 570)"><g class="star-trail trail-two"><path d="M0 0L28 38" stroke="url(#star-tail)" stroke-width="1.5" stroke-linecap="round"/><circle cx="28" cy="38" r="1.3" fill="#F8F7FF"/></g></g>
+  <g class="cloud-side wide-cloud">
+    <path d="M-80 476C-32 428 48 425 81 478C122 465 167 484 180 520C227 507 278 529 296 566C341 560 385 585 412 630H-80Z" fill="url(#cloud-far)"/>
+  </g>
+  <g class="cloud-bank wide-cloud">
+    <path d="M-50 835C21 792 104 820 133 887C181 872 239 903 252 956C311 942 371 982 389 1032C435 1014 499 1036 528 1080C608 1049 684 1065 723 1118H-50Z" fill="url(#cloud-back)"/>
+    <path d="M881 1118C902 1065 952 1042 1004 1051C1017 980 1085 933 1143 951C1152 878 1232 823 1295 846C1321 764 1407 734 1472 779C1532 746 1596 765 1648 823V1118Z" fill="url(#cloud-back)"/>
+  </g>
+  <path class="wide-cloud" d="M-50 961C17 923 99 946 131 1000C185 979 249 1004 269 1044C332 1033 400 1061 418 1101C463 1083 508 1086 541 1118H-50Z" fill="url(#cloud-front)"/>
+  <path class="wide-cloud" d="M1012 1118C1036 1077 1093 1053 1142 1063C1155 1014 1227 984 1270 1000C1307 932 1388 913 1442 938C1498 887 1587 895 1648 942V1118Z" fill="url(#cloud-front)"/>
+  <g class="phone-clouds">
+    <g class="cloud-side"><path d="M490 477C525 442 576 450 595 487C627 474 658 492 667 521C700 512 737 534 750 566C779 561 811 588 824 630H490Z" fill="url(#cloud-far)"/></g>
+    <g class="cloud-bank">
+      <path d="M480 884C516 845 568 862 585 910C617 896 653 921 660 958C699 946 739 974 751 1011C783 1004 817 1042 828 1118H480Z" fill="url(#cloud-back)"/>
+      <path d="M774 1118C790 1062 834 1037 870 1047C877 988 916 950 948 963C952 899 991 846 1028 863C1050 809 1104 799 1143 831V1118Z" fill="url(#cloud-back)"/>
+    </g>
+    <path d="M480 982C520 941 579 951 605 988C641 977 680 995 694 1027C738 1014 778 1047 791 1077C820 1069 848 1086 862 1118H480Z" fill="url(#cloud-front)"/>
+    <path d="M774 1118C785 1086 818 1064 849 1072C865 1031 903 1003 938 1015C954 971 1001 943 1039 963C1064 918 1111 913 1143 940V1118Z" fill="url(#cloud-front)"/>
+  </g>
+  <g class="leaf-left"><use href="#sprig"/></g>
+  <g class="leaf-right"><use href="#sprig" transform="translate(1600 0) scale(-1 1)"/></g>
+</svg>
