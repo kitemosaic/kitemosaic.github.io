@@ -1,15 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-appearance="system">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#aab8de">
   <meta name="referrer" content="no-referrer">
   <meta name="description" content="Red Blue Tap by KiteMosaic. Tap blue. Leave red. Reveal the picture. Discover 100 little mysteries with gentle music and a sky full of clouds.">
   <title>Red Blue Tap | KiteMosaic</title>
   <link rel="canonical" href="https://kitemosaic.github.io/redbluetap/">
   <link rel="preload" href="assets/fonts/dynapuff.ttf" as="font" type="font/ttf" crossorigin>
+  <script src="theme.js"></script>
   <link rel="stylesheet" href="theme.css">
 </head>
 <body class="game-page">
@@ -17,7 +18,9 @@
   <div class="sky" aria-hidden="true"><img class="sky-art" src="assets/sky.svg" alt="" width="1600" height="1100"></div>
   <header class="site-header">
     <a class="brand" href="../">KiteMosaic</a>
-    <nav aria-label="Main navigation"><a href="privacy.html">Privacy Policy</a><a href="#support">Support</a></nav>
+    <nav aria-label="Main navigation"><a href="privacy.html">Privacy Policy</a><a href="#support">Support</a>
+      <label class="appearance-control" hidden><span>Theme</span><select id="appearance" name="appearance"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>
+    </nav>
   </header>
   <main class="game-main" id="main">
     <section class="game-hero" aria-labelledby="game-title">
@@ -57,3 +60,4 @@
   </footer>
 </body>
 </html>
+
