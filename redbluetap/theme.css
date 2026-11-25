@@ -158,7 +158,7 @@ tbody th { padding-left: 0; font-weight: 650; }
     color-scheme: dark;
     --ink: #ece9ff;
     --body: #d5dced;
-    --muted: #bec9e2;
+    --muted: #d0daef;
     --blue: #aed7ff;
     --red: #f3b2cc;
     --line: #aab9dd47;
@@ -166,7 +166,7 @@ tbody th { padding-left: 0; font-weight: 650; }
     --page-bg: #1b253f;
     --focus: #c4d9ff;
     --sky-bg: radial-gradient(ellipse at 75% 83%, #254b57 0, #254b5700 52%), radial-gradient(ellipse at 41% 38%, #45375f 0, #45375f00 64%), linear-gradient(165deg, #1b2845 0%, #2c304d 53%, #203c50 100%);
-    --sky-art-filter: brightness(.55) saturate(.8);
+    --sky-art-filter: brightness(.36) saturate(.8);
     --policy-wash: linear-gradient(180deg, #20284035, #202840d9 46%, #202840eb);
     --summary-border: #96b0e1;
     --contents-line: #b8caf080;
@@ -186,7 +186,7 @@ tbody th { padding-left: 0; font-weight: 650; }
     color-scheme: dark;
     --ink: #ece9ff;
     --body: #d5dced;
-    --muted: #bec9e2;
+    --muted: #d0daef;
     --blue: #aed7ff;
     --red: #f3b2cc;
     --line: #aab9dd47;
@@ -194,7 +194,7 @@ tbody th { padding-left: 0; font-weight: 650; }
     --page-bg: #1b253f;
     --focus: #c4d9ff;
     --sky-bg: radial-gradient(ellipse at 75% 83%, #254b57 0, #254b5700 52%), radial-gradient(ellipse at 41% 38%, #45375f 0, #45375f00 64%), linear-gradient(165deg, #1b2845 0%, #2c304d 53%, #203c50 100%);
-    --sky-art-filter: brightness(.55) saturate(.8);
+    --sky-art-filter: brightness(.36) saturate(.8);
     --policy-wash: linear-gradient(180deg, #20284035, #202840d9 46%, #202840eb);
     --summary-border: #96b0e1;
     --contents-line: #b8caf080;
